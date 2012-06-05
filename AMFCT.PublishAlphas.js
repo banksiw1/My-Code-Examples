@@ -29,13 +29,13 @@ amfct.PublishAlphas = function () {
         msgPrompt.init('msg', 'loading', '<img src="/assets/images/core/ajax-loader.gif" alt="">', 'body', 'bottom');
     };
     publishSuccessCallback = function (response) {
-	msgPrompt.TearDownMsg('#msg');
-	msgPrompt.init('msg','publishing-successful', '<p>Alpha\'s have successfully been published</p>', 'body', 'top', true);
+		msgPrompt.TearDownMsg('#msg');
+		msgPrompt.init('msg','publishing-successful', '<p>Alpha\'s have successfully been published</p>', 'body', 'top', true);
         that.dataRow.parents('#search-results').addClass('is-saved');
     };
     publishFailureCallback = function (jqXHR, textStatus, errorThrown) {
     	msgPrompt.TearDownMsg('#msg');
-	msgPrompt.init('msg', 'publishing-unsuccessful', '<p>A system error has occured, Alpha\'s have not been published</p><a class="close" href="#close">Close</a>', 'body', 'bottom');
+		msgPrompt.init('msg', 'publishing-unsuccessful', '<p>A system error has occured, Alpha\'s have not been published</p><a class="close" href="#close">Close</a>', 'body', 'bottom');
     };
 
     /*Public Functions*/
@@ -43,18 +43,17 @@ amfct.PublishAlphas = function () {
         this.container = $(container);
         this.selectAll = this.container.find('.select-episodes');
         this.dataRow = this.container.find('.episode-details tbody tr');
-	this.seasonInput = this.container.find('.season-no input');
+		this.seasonInput = this.container.find('.season-no input');
       	this.publishBtn = $('#publish');
         domEvents();
     };
     this.PublishSelectedAlphas = function (event) {
         event.preventDefault();
         var validateAlphas, jsonData;
-	validateAlphas =  validatePublishAlphas.init(that.dataRow, '<p>Please complete the missing fields for the AE number you are trying to submit(listed below) before clicking \'Publish\' again.</p>', formChanged);
+		validateAlphas =  validatePublishAlphas.init(that.dataRow, '<p>Please complete the missing fields for the AE number you are trying to submit(listed below) before clicking \'Publish\' again.</p>', formChanged);
         if (validatePublishAlphas.CheckAlphas()) {
-            jsonData = dataObject.ParseFieldInputs();
+            jsonData = dataObject.ParseFieldInputs(); 
             ajaxRequest.SendData('/Home/Publish', jsonData, requestCallback, publishSuccessCallback, publishFailureCallback);
-        	console.log("hello");
 		} else {
             return false;
         }
