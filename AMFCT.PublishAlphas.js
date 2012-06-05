@@ -54,7 +54,8 @@ amfct.PublishAlphas = function () {
         if (validatePublishAlphas.CheckAlphas()) {
             jsonData = dataObject.ParseFieldInputs();
             ajaxRequest.SendData('/Home/Publish', jsonData, requestCallback, publishSuccessCallback, publishFailureCallback);
-        } else {
+        	console.log("hello");
+		} else {
             return false;
         }
     };
