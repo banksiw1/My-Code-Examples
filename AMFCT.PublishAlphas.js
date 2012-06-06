@@ -29,7 +29,7 @@ amfct.PublishAlphas = function () {
         msgPrompt.init('msg', 'loading', '<img src="/assets/images/core/ajax-loader.gif" alt="">', 'body', 'bottom');
     };
     publishSuccessCallback = function (response) {
-		msgPrompt.TearDownMsg('#msg');
+		msgPrompt.TearDownMsg('#msg'); 
 		msgPrompt.init('msg','publishing-successful', '<p>Alpha\'s have successfully been published</p>', 'body', 'top', true);
         that.dataRow.parents('#search-results').addClass('is-saved');
     };
