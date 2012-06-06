@@ -49,7 +49,7 @@ amfct.PublishAlphas = function () {
     };
     this.PublishSelectedAlphas = function (event) {
         event.preventDefault();
-        var validateAlphas, jsonData;
+        var validateAlphas,jsonData;
 		validateAlphas =  validatePublishAlphas.init(that.dataRow, '<p>Please complete the missing fields for the AE number you are trying to submit(listed below) before clicking \'Publish\' again.</p>', formChanged);
         if (validatePublishAlphas.CheckAlphas()) {
             jsonData = dataObject.ParseFieldInputs(); 
