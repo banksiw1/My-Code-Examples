@@ -46,6 +46,7 @@ amfct.PublishAlphas = function () {
 		this.seasonInput = this.container.find('.season-no input');
       	this.publishBtn = $('#publish');
         domEvents();
+		console.log("hello");
     };
     this.PublishSelectedAlphas = function (event) {
         event.preventDefault();
