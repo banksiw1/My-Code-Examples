@@ -5,7 +5,7 @@ amfct_utils.DataConstructor = function () {
 	
 	/*Private Functions*/
 	isArray = function(o) {
-		console.log('hello');
+		console.log('then');
 		return Object.prototype.toString.call(o) === '[object Array]';
 	};
 	stringEndsWith = function (input, suffix) {
